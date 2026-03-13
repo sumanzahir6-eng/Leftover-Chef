@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leftover Chef</title>
+
+<style>
+body{
+font-family: Arial, sans-serif;
+background: linear-gradient(135deg,#e8f5e9,#c8e6c9);
+margin:0;
+display:flex;
+flex-direction:column;
+min-height:100vh;
+}
+
+header{
+text-align:center;
+padding:40px 20px;
+color:#1b5e20;
+}
+
+h1{
+font-size:40px;
+margin-bottom:10px;
+}
+
+.container{
+background:white;
+max-width:600px;
+margin:auto;
+padding:30px;
+border-radius:10px;
+box-shadow:0 10px 20px rgba(0,0,0,0.1);
+text-align:center;
+}
+
+input{
+width:80%;
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+font-size:16px;
+margin-bottom:15px;
+}
+
+button{
+background:#43a047;
+color:white;
+border:none;
+padding:12px 25px;
+font-size:16px;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#2e7d32;
+}
+
+#result{
+margin-top:20px;
+padding:15px;
+background:#f1f8e9;
+border-radius:8px;
+font-size:16px;
+color:#2e7d32;
+}
+
+footer{
+margin-top:auto;
+text-align:center;
+padding:15px;
+background:#2e7d32;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>🍳 Leftover Chef</h1>
+<p>Turn your leftover ingredients into simple delicious meals</p>
+</header>
+
+<div class="container">
+
+<input type="text" id="ingredients" placeholder="Type ingredients like chicken, rice, tomatoes...">
+
+<br>
+
+<button onclick="findRecipe()">Find Recipe</button>
+
+<div id="result"></div>
+
+</div>
+
+<footer>
+Built by Suman Zahir
+</footer>
+
+<script>
+function findRecipe(){
+
+let input=document.getElementById("ingredients").value.toLowerCase();
+let result="";
+
+if(input.includes("chicken") && input.includes("rice")){
+result="🍗 Chicken & Rice Bowl: Cook rice, sauté chicken with garlic, soy sauce, and veggies. Serve chicken over warm rice.";
+}
+
+else if(input.includes("tomato") && input.includes("pasta")){
+result="🍝 Simple Tomato Pasta: Boil pasta, cook tomatoes with olive oil, garlic, salt and herbs. Mix together.";
+}
+
+else if((input.includes("egg") || input.includes("eggs")) && input.includes("vegetable")){
+result="🍳 Veggie Omelette: Beat eggs, add chopped vegetables, cook in a pan with salt and pepper.";
+}
+
+else if(input.includes("beans") && input.includes("rice")){
+result="🍛 Beans & Rice (Rajma Chawal): Cook beans with onion, garlic, tomato and spices. Serve with steamed rice.";
+}
+
+else if(input.includes("potato") && input.includes("salt") && input.includes("chilli")){
+result="🥔 Salty Boiled Potatoes with Chilli Pieces: Boil potatoes, sprinkle salt and chopped chilli, drizzle with butter.";
+}
+
+else if(input.includes("bread") && input.includes("egg")){
+result="🍞 Egg Toast: Dip bread in beaten egg and fry in a pan until golden.";
+}
+
+else if(input.includes("rice") && input.includes("egg")){
+result="🍳 Egg Fried Rice: Fry rice with scrambled eggs, soy sauce, and vegetables.";
+}
+
+else if(input.includes("milk") && input.includes("banana")){
+result="🥤 Banana Milk Smoothie: Blend banana, milk, honey and ice.";
+}
+
+else if(input.includes("tomato") && input.includes("egg")){
+result="🍅 Tomato Egg Scramble: Cook tomatoes in a pan then scramble eggs into them.";
+}
+
+else if(input.includes("cheese") && input.includes("bread")){
+result="🧀 Grilled Cheese Sandwich: Butter bread, add cheese and grill until crispy.";
+}
+
+else{
+result="🤔 Try simple dishes like fried rice, omelette, vegetable soup, grilled sandwich, or pasta based on your ingredients.";
+}
+
+document.getElementById("result").innerHTML=result;
+
+}
+</script>
+
+</body>
+</html>
